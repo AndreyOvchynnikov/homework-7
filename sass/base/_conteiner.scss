@@ -1,0 +1,24 @@
+.conteiner{
+    margin: 0 auto;
+    width: 1200px;
+}
+.header .conteiner{
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    border-top: none;
+    min-height: 80px;
+}
+.hero .conteiner{
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+.team .conteiner{
+    padding: 94px 15px;
+}
+.clients .conteiner{
+    padding: 94px 15px;
+}
+.footer .conteiner{
+    padding: 60px 15px;
+}
