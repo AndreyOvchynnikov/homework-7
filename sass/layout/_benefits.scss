@@ -4,13 +4,13 @@
 }
 .benefits-list-item{
     width: 270px;
-}
-.benefits-list-item:not(:last-child){
+
+    &:not(:last-child){
     margin-right: 30px;
-}
-.benefits-list-title:not(:last-child){
     margin-bottom: 10px;
+    }
 }
+
 .benefits-list-title {
 font-weight: 700;
 font-size: 14px;

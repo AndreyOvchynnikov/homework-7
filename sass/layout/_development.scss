@@ -12,11 +12,13 @@ padding-bottom: 50px;
     padding-right: 15px;
     padding-bottom: 94px;
 }
-.development-list-item:not(:last-child){
-    margin-right: 30px;
-}
+
 .development-list-item{
     position: relative;
+
+    &:not(:last-child){
+    margin-right: 30px;
+    }
 }
 .development-list-text{
 position: absolute;

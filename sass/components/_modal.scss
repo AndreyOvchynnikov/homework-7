@@ -30,8 +30,9 @@ border-radius: 50%;
 cursor: pointer;
 align-items: center;
 transition: fill 250ms linear;
-}
-.modal-close-btn:focus,
-.modal-close-btn:hover{
+
+    &:focus,
+    &:hover{
     fill: var(--accent-color);
+    }
 }
