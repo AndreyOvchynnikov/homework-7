@@ -12,15 +12,15 @@ transition: text-decoration 1000ms cubic-bezier(0.4, 0, 0.2, 1);
     &:focus {
     text-decoration: underline;
     }
-}
-.logo-part-right-header {
-    color: var(--primary-color);
-}
-
-.logo-part-right-footer {
-    color: var(--third-color);
-}
-.footer-logo-div{
+    .footer &{
     display: block;
     margin-bottom: 20px;
+    }
 }
+.logo__light-theme{
+color: var(--primary-color); 
+}
+.logo__dark-theme{
+    color: var(--third-color);
+}
+

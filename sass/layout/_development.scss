@@ -1,4 +1,4 @@
-.development-title {
+.development__title {
 font-weight: 700;
 font-size: 36px;
 line-height: 1.17;
@@ -6,21 +6,21 @@ text-align: center;
 letter-spacing: 0.03em;
 padding-bottom: 50px;
 }
-.development-list{
-    display: flex;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 94px;
+.development__list{
+display: flex;
+padding-left: 15px;
+padding-right: 15px;
+padding-bottom: 94px;
 }
 
-.development-list-item{
+.development__item{
     position: relative;
 
     &:not(:last-child){
     margin-right: 30px;
     }
 }
-.development-list-text{
+.development__text{
 position: absolute;
 font-weight: 700;
 font-size: 14px;
