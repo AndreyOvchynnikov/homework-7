@@ -18,6 +18,16 @@
   overflow: hidden;
 }
 
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1), pointer-events 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .is-hidden {
   opacity: 0;
   visibility: hidden;
@@ -163,17 +173,7 @@ img {
   fill: var(--third-color);
 }
 
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.2);
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1), pointer-events 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal {
+.modal-window {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -184,7 +184,7 @@ img {
   padding: 40px;
 }
 
-.modal-close-btn {
+.modal-window__close-btn {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -198,11 +198,11 @@ img {
   align-items: center;
   transition: fill 250ms linear;
 }
-.modal-close-btn:focus, .modal-close-btn:hover {
+.modal-window__close-btn:focus, .modal-window__close-btn:hover {
   fill: var(--accent-color);
 }
 
-.modal-text {
+.modal-form__text {
   display: block;
   text-align: center;
   margin-bottom: 12px;
@@ -219,20 +219,7 @@ img {
   flex-direction: column;
 }
 
-.modal-form-input {
-  width: 100%;
-  height: 40px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-  padding-left: 42px;
-  transition: border-color 250ms linear;
-}
-.modal-form-input:focus {
-  outline: none;
-  border-color: var(--accent-color);
-}
-
-.modal-form-label {
+.modal-form__label {
   margin-bottom: 10px;
   font-family: var(--main-font);
   font-size: 12px;
@@ -241,24 +228,37 @@ img {
   color: #757575;
 }
 
-.modal-form-label-wrapper {
+.modal-form__label-wrapper {
   position: relative;
   margin-top: 4px;
   display: block;
 }
 
-.modal-form-icon {
+.modal-form__input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding-left: 42px;
+  transition: border-color 250ms linear;
+}
+.modal-form__input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.modal-form__icon {
   position: absolute;
   top: 50%;
   left: 12px;
   transform: translateY(-50%);
   transition: fill 250ms linear;
 }
-.modal-form-input:focus + .modal-form-icon {
+.modal-form__input:focus + .modal-form__icon {
   fill: var(--accent-color);
 }
 
-.modal-form-message {
+.modal-form__textarea {
   width: 100%;
   resize: none;
   margin-top: 4px;
@@ -272,15 +272,15 @@ img {
   letter-spacing: 0.01em;
   transition: border-color 250ms linear;
 }
-.modal-form-message::placeholder {
+.modal-form__textarea::placeholder {
   color: rgba(117, 117, 117, 0.5);
 }
-.modal-form-message:focus {
+.modal-form__textarea:focus {
   border-color: var(--accent-color);
   outline: none;
 }
 
-.modal-form-license-text {
+.modal-form__license-text {
   display: flex;
   font-family: var(--main-font);
   font-size: 14px;
@@ -290,7 +290,7 @@ img {
   align-items: center;
   margin-bottom: 30px;
 }
-.modal-form-license-text::before {
+.modal-form__license-text::before {
   display: block;
   content: "";
   width: 16px;
@@ -300,7 +300,7 @@ img {
   margin-right: 7px;
   cursor: pointer;
 }
-.modal-form-license-box:checked + .modal-form-license-text::before {
+.modal-form__licensebox:checked + .modal-form__license-text::before {
   background-image: url("../images/icon-check.svg");
   background-position: center;
   border-color: var(--accent-color);
@@ -308,15 +308,14 @@ img {
   border-radius: 1px;
 }
 
-.modal-form-license-link {
+.modal-form__license-link {
   text-decoration-line: underline;
   color: #2196F3;
 }
 
-.modal-form-button {
+.modal-form__button {
   align-self: center;
   min-width: 200px;
-  /* min-height: 50px; */
   background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -333,7 +332,7 @@ img {
   border: 1px solid transparent;
   transition: background-color 250ms linear;
 }
-.modal-form-button:focus, .modal-form-button:hover {
+.modal-form__button:focus, .modal-form__button:hover {
   background-color: #188CE8;
 }
 
@@ -422,8 +421,8 @@ img {
 }
 
 .navigation__link {
-  font-weight: 500;
   font-size: 14px;
+  font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--primary-color);
