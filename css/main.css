@@ -85,6 +85,7 @@ img {
 .footer .conteiner {
   padding: 60px 15px;
   display: flex;
+  align-items: baseline;
 }
 
 .logo {
@@ -334,10 +335,6 @@ img {
 }
 .modal-form__button:focus, .modal-form__button:hover {
   background-color: #188CE8;
-}
-
-.email-form {
-  padding-top: 12px;
 }
 
 .email-form__message {
@@ -696,7 +693,6 @@ img {
 }
 
 .footer__social-links-conteiner {
-  padding-top: 12px;
   margin-right: 94px;
 }
 
